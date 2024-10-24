@@ -1,0 +1,7 @@
+{
+  "name": "quitotech",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
