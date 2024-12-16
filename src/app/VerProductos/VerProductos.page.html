@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ producto?.Nombre || 'Detalles del Producto' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="producto; else loading">
+    <!-- Card del producto -->
+    <ion-card>
+      <img *ngIf="producto.imagenUrl" [src]="producto.imagenUrl"
+        alt="{{ producto.Nombre }}" />
+      <ion-card-content>
+        <p><strong>Tienda:</strong> {{ producto.id_tienda.Nombre }}</p>
+        <p><strong>Precio:</strong> $ {{ producto.precio }}</p>
+        <p><strong>Categoría:</strong> {{ producto.Categoria }}</p>
+        <p><strong>Estado:</strong> {{ producto.Estado ? 'Disponible' :
+          'No disponible' }}</p>
+        <p><strong>Cantidad:</strong> {{ producto.Cantidad }}</p>
+        <p><strong>Calificación promedio:</strong> {{
+          producto.promedio_calificacion }}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Sección de comentarios -->
+    <div *ngIf="autorizacion === 'Invitado'" class="registration-message"
+      style="text-align: center; padding: 20px;">
+      <h2 style="color: rgb(255, 255, 255);">Registro Requerido</h2>
+      <p style="color: rgb(255, 255, 255);">Debes registrarte para comentar en
+        los productos</p>
+    </div>
+    <!-- Formulario de edición de comentario -->
+    <div *ngIf="comentarioEnEdicion">
+      <ion-item>
+        <ion-label position="floating">Título</ion-label>
+        <ion-input [(ngModel)]="comentarioEnEdicion.titulo"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripción</ion-label>
+        <ion-textarea
+          [(ngModel)]="comentarioEnEdicion.descripcion"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Calificación</ion-label>
+        <ion-select [(ngModel)]="comentarioEnEdicion.calificacion">
+          <ion-select-option *ngFor="let star of [1, 2, 3, 4, 5]"
+            [value]="star">{{ star }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="block"
+        (click)="guardarEdicionComentario()" class="update">Aceptar</ion-button>
+    </div>
+    <div class="comentarios-section">
+      <!-- Comentario del usuario -->
+      <div *ngIf="comentarioUsuario" class="comentario-usuario">
+        <p><strong>{{ comentarioUsuario.titulo }}</strong></p>
+        <div class="stars">
+          <ion-icon *ngFor="let star of stars(comentarioUsuario.calificacion)"
+            name="star"></ion-icon>
+        </div>
+        <p>{{ comentarioUsuario.descripcion }}</p>
+        <div class="buttons">
+          <ion-button
+            (click)="habilitarEdicion(comentarioUsuario)" class="update">Actualizar</ion-button>
+          <ion-button
+            (click)="eliminarComentario(comentarioUsuario)" class="delete">Eliminar</ion-button>
+        </div>
+      </div>
+      <!-- Sección de comentarios del producto -->
+      <div class="comentarios-del-producto">
+        <!-- Formulario de comentario (solo si el usuario no ha comentado ya) -->
+        <div *ngIf="!comentarioUsuario && autorizacion === 'Usuario'"
+          class="formulario-comentario">
+          <ion-item>
+            <ion-input [(ngModel)]="nuevoComentario.titulo" placeholder="Título"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="nuevoComentario.descripcion"
+              placeholder="Descripción" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-select [(ngModel)]="nuevoComentario.calificacion"
+              placeholder="Calificación">
+              <ion-select-option *ngFor="let i of [1, 2, 3, 4, 5]"
+                [value]="i">{{
+                i }}</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <ion-button expand="full" (click)="crearComentario()">Enviar
+            Comentario</ion-button>
+        </div>
+        <h3>Comentarios del Producto</h3>
+        <ion-list>
+          <ion-item *ngFor="let comentario of comentarios"
+            class="comentario-item">
+            <ion-label>
+              <p><strong>{{ comentario.titulo }}</strong></p>
+              <div class="stars">
+                <ion-icon *ngFor="let star of stars(comentario.calificacion)"
+                  name="star"></ion-icon>
+              </div>
+              <p>{{ comentario.descripcion }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loading>
+    <ion-spinner></ion-spinner>
+    <p>Cargando producto...</p>
+  </ng-template>
+</ion-content>

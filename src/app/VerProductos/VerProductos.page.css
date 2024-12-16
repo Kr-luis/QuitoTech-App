@@ -1,0 +1,206 @@
+/* Fondo y modal del contenido */
+ion-content.modal-content {
+  background-color: #000000; /* Fondo oscuro para el contenido */
+  color: white; /* Color de texto blanco */
+  text-align: center;
+}
+
+.modal-ng {
+  background-color: #000000; /* Fondo oscuro para el contenido */
+}
+
+/* Título del modal (nombre del producto) */
+.modal-title {
+  background-color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Estilos para la tarjeta del producto */
+.modal-card {
+  background-color: #000000; /* Fondo oscuro para la tarjeta */
+  box-shadow: 0px 4px 10px rgba(130, 6, 134, 0.637);
+}
+
+.product-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+}
+
+/* Contenido de la tarjeta */
+ion-card-content p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: white; /* Color del texto */
+}
+
+/* Estilo para el botón Cerrar */
+ion-button.close-modal-button {
+  background-color: transparent;
+  color: white;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+ion-button.close-modal-button:hover {
+  color: #ff0000; /* Rojo cuando se pasa el mouse */
+}
+
+/* Spinner de carga */
+ion-spinner {
+  margin-top: 20px;
+}
+
+/* Sección de comentarios */
+.comentarios-section {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #000000; /* Fondo oscuro */
+  border-radius: 10px;
+  color: white; /* Texto blanco */
+}
+
+.comentarios-section h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: white; /* Título blanco */
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(161, 23, 196, 0.74); /* Sombra sutil para el título */
+}
+
+ion-list {
+  margin: 0;
+  padding: 0;
+}
+
+ion-item {
+  --background: #fafafa;
+  --color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+ion-item:last-child {
+  border-bottom: none;
+}
+
+ion-label p {
+  color: #333;
+  font-size: 14px;
+}
+
+ion-item ion-label strong {
+  font-weight: bold;
+  color: #701edb; /* Color para los nombres de los usuarios */
+}
+
+/* Estilos para el comentario del usuario */
+.comentario-usuario {
+  background-color: #fdfbfb;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  color: #000000;
+  border-bottom-left-radius: 0;
+}
+
+.comentario-usuario p {
+  margin: 5px 0;
+}
+
+.comentario-usuario .stars {
+  color: #ffcc00; /* Color dorado para las estrellas */
+}
+
+/* Comentarios del producto */
+.comentarios-del-producto {
+  margin-top: 40px; /* Separación de los comentarios del producto */
+}
+
+/* Estilos para los comentarios individuales */
+.comentario-item {
+  padding: 10px;
+  margin-bottom: 15px; /* Separación entre los comentarios */
+  border: 1px solid #ddd;
+  border-radius: 50px; /* Bordes redondeados */
+  background-color: #fff;
+  /* Excluir la esquina inferior izquierda del borde redondeado */
+  border-bottom-left-radius: 0;
+}
+
+.comentario-item p {
+  margin: 5px 0;
+}
+
+.comentario-item .stars {
+  color: #ffcc00; /* Color dorado para las estrellas */
+}
+
+.comentarios-section ion-item {
+  margin-bottom: 10px;
+}
+
+.comentarios-section ion-input,
+.comentarios-section ion-select {
+  width: 100%;
+}
+
+.comentarios-section ion-button {
+  margin-top: 10px;
+  color: white;
+}
+
+/* Estilos para los botones de eliminar/actualizar */
+.comentarios-section .comentario-item .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comentarios-section .comentario-item ion-button {
+  background-color: transparent;
+  color: #ff4d4d; /* Color de los botones de eliminar/actualizar */
+}
+
+.comentarios-section .comentario-item ion-button:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos para el formulario de comentario */
+.comentarios-section .formulario-comentario {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.comentarios-section ion-select {
+  margin-bottom: 10px;
+}
+
+.comentarios-section ion-input {
+  margin-bottom: 10px;
+}
+
+/* Estilos para la sección de registro */
+.comentarios-section .registration-message {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+ion-button.delete {
+  --background: #f80000;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Botón Agregar a Favoritos con color #3deb11 */
+ion-button.update {
+  --background: #1fad12;
+  color: white;
+  margin-top: 10px;
+}

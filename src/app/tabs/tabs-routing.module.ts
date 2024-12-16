@@ -8,32 +8,41 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'Productos',
+        loadChildren: () => import('../Productos/Productos.module').then(m => m.ProductosPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'Favoritos',
+        loadChildren: () => import('../Favoritos/Favoritos.module').then(m => m.FavoritosPageModule)
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'configuraciones',
+        loadChildren: () => import('../Configuraciones/Configuraciones.module').then(m => m.ConfiguracionesPageModule)
+      },
+      {
+        path: 'carrito',
+        loadChildren: () => import('../Carrito/carrito.module').then(m => m.CarritoPageModule)
+      },
+      {
+        path: 'ver-producto',
+        loadChildren: () => import('../VerProductos/VerProductos.module').then(m => m.VerProductosPageModule)
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/Productos',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/Productos',
     pathMatch: 'full'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class TabsPageRoutingModule {}

@@ -1,0 +1,59 @@
+<ion-content>
+  <div class="login-container">
+    <img src="../../assets/Images/logo.png">
+    <h2>Iniciar sesión</h2>
+
+    <!-- Campo de correo electrónico -->
+    <ion-item>
+      <div style="display: flex; align-items: center; width: 100%;">
+        <ion-input
+          style="flex: 1;"
+          placeholder="Correo electrónico"
+          type="email"
+          [(ngModel)]="email"
+          required>
+        </ion-input>
+        <ion-button
+        fill="clear"
+        style="margin-left: 10px; height: auto; width: auto; padding: 0; min-width: 40px;">
+      </ion-button>
+      </div>
+    </ion-item>
+
+    <!-- Campo de contraseña -->
+    <ion-item>
+      <div style="display: flex; align-items: center; width: 100%;">
+        <ion-input
+          style="flex: 1;"
+          [type]="showPassword ? 'text' : 'password'"
+          [(ngModel)]="password"
+          placeholder="Contraseña"
+          required>
+        </ion-input>
+        <ion-button
+          fill="clear"
+          (click)="togglePasswordVisibility()"
+          style="margin-left: 10px; height: auto; width: auto; padding: 0; min-width: 40px;">
+          <ion-icon
+            [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+            style="color: white;">
+          </ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+    <a href="forget" class="forget">Olvidaste tu contraseña</a>
+    <!-- Botón de login -->
+    <ion-button expand="block" (click)="login()" class="login-buttons">Iniciar sesión</ion-button>
+
+    <!-- Enlace a la página de registro -->
+    <ion-button expand="block" (click)="createAccount()" class="login-buttons">
+      Regístrate
+    </ion-button>
+
+    <!-- Opción de login sin cuenta -->
+    <ion-button expand="block" (click)="loginWithoutAccount()" class="login-buttons">
+      Iniciar sesión como invitado
+    </ion-button>
+
+  </div>
+</ion-content>

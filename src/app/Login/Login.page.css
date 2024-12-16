@@ -1,0 +1,75 @@
+/* Estilo general para el contenedor */
+ion-content {
+  --background: #000; /* Fondo blanco */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  justify-content: center; /* Centra verticalmente */
+  height: 100%; /* Asegura que el contenido ocupe todo el alto disponible */
+  padding: 20px;
+}
+/* Estilo para la imagen */
+img {
+  width: 150px; /* Tamaño reducido */
+  height: auto; /* Mantiene la proporción */
+  margin-bottom: 20px; /* Espacio debajo de la imagen */
+  display: block; /* Asegura que se centre correctamente */
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;  /* Centrar verticalmente */
+  animation: slideUp 0.6s ease-out;
+}
+
+.centered-image {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.centered-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6A1B9A;  /* Color morado */
+  margin-bottom: 30px;
+}
+
+/* Personaliza el estilo de los botones */
+.login-buttons {
+  --background: #6A1B9A; /* Color morado */
+  --background-activated: #4A148C;  /* Color morado más oscuro al presionar */
+  --background-focused: #4A148C;  /* Color morado oscuro cuando está enfocado */
+  --background-hover: #7B1FA2;  /* Color morado claro cuando el ratón está sobre el botón */
+  margin-top: 5px;
+  width: 45%;
+}
+.transparent-item {
+  --background: transparent;  /* Fondo transparente */
+  --placeholder-color: #ffffff;  /* Color placeholder morado */
+  --color: #ffffff;  /* Color del texto morado */
+  border-bottom: 1px solid #ffffff;  /* Línea morada debajo del input */
+}
+.forget{
+  color: white; /* Texto blanco */
+  background-color: #000; /* Fondo negro */
+  padding: 10px 20px; /* Espaciado alrededor del texto */
+  text-decoration: none; /* Eliminar subrayado */
+  display: block;
+  text-align: center;
+}
+.forget:hover {
+  background-color: #333;
+}
+/* Animación de deslizamiento hacia arriba */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

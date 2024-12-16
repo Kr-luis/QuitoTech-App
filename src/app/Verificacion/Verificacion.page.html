@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verificación de Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- Mostrar mensaje de error si existe -->
+    <ion-item *ngIf="errorMessage" color="danger">
+      <ion-label>{{ errorMessage }}</ion-label>
+    </ion-item>
+
+    <!-- Mostrar mensaje de éxito si existe -->
+    <ion-item *ngIf="successMessage" color="success">
+      <ion-label>{{ successMessage }}</ion-label>
+    </ion-item>
+
+    <!-- Formulario para ingresar el token -->
+    <ion-item>
+      <ion-label position="stacked">Ingrese el token de verificación</ion-label>
+      <ion-input [(ngModel)]="token" type="text" placeholder="Token de verificación" required></ion-input>
+    </ion-item>
+
+    <!-- Botón para verificar la cuenta -->
+    <ion-button expand="full" (click)="verificarCuenta()">Verificar Cuenta</ion-button>
+
+    <!-- Botón para volver a enviar el código (por ahora no hace nada) -->
+    <ion-button expand="full" (click)="reenviarCodigo()">Volver a enviar código</ion-button>
+
+    <!-- Botón para redirigir al login -->
+    <ion-button expand="full" (click)="redirigirLogin()">Ir al Login</ion-button>
+  </div>
+</ion-content>

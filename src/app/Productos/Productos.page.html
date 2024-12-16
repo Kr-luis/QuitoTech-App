@@ -1,0 +1,102 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Barra de búsqueda con botón de categoría -->
+  <div style="display: flex; align-items: center; gap: 8px; padding: 0 16px;">
+    <ion-searchbar
+      [(ngModel)]="terminoBusqueda"
+      (ionInput)="filtrarProductos()"
+      placeholder="Buscar productos"
+      style="flex-grow: 1;"></ion-searchbar>
+    <ion-button (click)="abrirMenuCategorias()"
+      class="ver-producto-button">Categorías</ion-button>
+  </div>
+
+  <!-- Menú de Categorías -->
+  <ion-menu contentId="main-content" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Selecciona</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="cerrarMenuCategorias()">Cerrar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <!-- Botones para cada categoría -->
+        <ion-item *ngFor="let categoria of categorias"
+          (click)="filtrarPorCategoria(categoria)">
+          <ion-label>{{ categoria }}</ion-label>
+        </ion-item>
+        <!-- Botón para ver todos los productos -->
+        <ion-item (click)="filtrarPorCategoria('Todos')">
+          <ion-label>Todos</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Lista de productos -->
+  <ion-list id="main-content">
+    <ion-item *ngFor="let producto of productosFiltrados"
+      class="product-container">
+      <ion-label class="producto-info">
+        <img *ngIf="producto.imagenUrl" [src]="producto.imagenUrl"
+          alt="{{ producto.Nombre }}" class="product-image">
+        <h2 class="product-name">{{ producto.Nombre }}</h2>
+        <p class="product-store"><strong>Tienda:</strong> {{
+          producto.id_tienda.Nombre }}</p>
+        <p class="product-store"><strong>Precio:</strong> $ {{
+          producto.precio }}</p>
+        <p class="product-category"><strong>Categoría:</strong> {{
+          producto.Categoria }}</p>
+        <p class="product-price"><strong>Estado:</strong> {{ producto.Estado ?
+          'Disponible' : 'No disponible' }}</p>
+        <p class="product-price"><strong>Cantidad:</strong> {{ producto.Cantidad
+          }}</p>
+        <p class="product-store">
+          <strong>Calificación: </strong>
+          <!-- Estrellas llenas -->
+          <ion-icon
+            *ngFor="let star of [].constructor(obtenerEstrellas(producto.promedio_calificacion).estrellasLlenas)"
+            name="star" color="warning"></ion-icon>
+          <!-- Estrellas vacías -->
+          <ion-icon
+            *ngFor="let star of [].constructor(obtenerEstrellas(producto.promedio_calificacion).estrellasVacias)"
+            name="star-outline" color="warning"></ion-icon>
+        </p>
+
+        <!-- Botones -->
+        <ion-button class="ver-producto-button" expand="block"
+          (click)="verProducto(producto._id)">
+          Ver Producto
+        </ion-button>
+        <div class="button-group">
+          <ion-button class="favorite-button"
+            (click)="anadirAFavoritos(producto._id)">
+            <ion-icon name="bookmark-outline"></ion-icon>
+          </ion-button>
+          <ion-button class="reserve-button"
+            (click)="anadirAReservas(producto._id, producto.id_tienda)">
+            <ion-icon name="pricetag-outline"></ion-icon>
+          </ion-button>
+          <ion-button class="location-button"  (click)="abrirTiendaEnMapa(producto.id_tienda.Nombre, producto.id_tienda.Direccion)">
+            <ion-icon name="information-circle"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-label>
+    </ion-item>
+
+    <!-- Mensaje si no hay productos -->
+    <ion-item *ngIf="productosFiltrados.length === 0">
+      <ion-label>No existe un producto con un nombre parecido a lo que
+        buscas.</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

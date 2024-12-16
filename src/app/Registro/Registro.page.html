@@ -1,0 +1,73 @@
+
+<ion-content>
+  <div class="form-container">
+    <form (ngSubmit)="registrarUsuario()">
+      <ion-item>
+        <ion-input
+          placeholder="Nombre"
+          [(ngModel)]="nombre"
+          name="nombre"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          placeholder="Correo Electronico"
+          [(ngModel)]="email"
+          name="email"
+          type="email"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <div style="display: flex; align-items: center; width: 100%;">
+          <ion-input
+            placeholder="Password"
+            [(ngModel)]="password"
+            name="password"
+            [type]="showPassword ? 'text' : 'password'"
+            required>
+          </ion-input>
+          <ion-button
+            fill="clear"
+            (click)="togglePasswordVisibility()"
+            style="margin-left: 10px; height: auto; width: auto; padding: 0; min-width: 40px;">
+            <ion-icon
+              [name]="showPassword ? 'eye-off-outline' : 'eye-outline'"
+              style="color: white;">
+            </ion-icon>
+          </ion-button>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Aceptar Términos y Condiciones</ion-label>
+        <ion-checkbox
+          [(ngModel)]="aceptaTerminos"
+          name="acepta_terminos"
+          required
+          [disabled]="!haLeidoTerminos"
+          (click)="aceptarTerminos()"></ion-checkbox>
+        <ion-button fill="clear" size="small" (click)="mostrarTerminos()">
+          Ver
+        </ion-button>
+      </ion-item>
+
+      <div *ngIf="errorMessage" class="error-message">
+        <ion-text color="danger">{{ errorMessage }}</ion-text>
+      </div>
+
+      <div *ngIf="successMessage" class="success-message">
+        <ion-text color="success">{{ successMessage }}</ion-text>
+      </div>
+
+      <ion-button expand="full" type="submit"
+        [disabled]="!nombre || !email || !password || !aceptaTerminos">
+        Registrarse
+      </ion-button>
+    </form>
+    <ion-button expand="full" (click)="irALogin()">Login</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,34 @@
+.splash-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000000;
+}
+    .splash-logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    .message {
+      font-size: 18px;
+      color: #fdfdfd;
+      text-align: center;
+      margin-bottom: 20px; // espacio adicional si quieres separar un poco del borde
+    }
+    
+  // Animación de expansión y contracción
+  .animate {
+    animation: pulse 1s infinite ease-in-out;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  

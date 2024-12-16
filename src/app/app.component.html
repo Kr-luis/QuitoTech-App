@@ -1,3 +1,11 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- Muestra el SplashScreenComponent si showSplash es true 
+  <div *ngIf="showSplash">
+    <app-splash-screen></app-splash-screen>
+  </div> -->
+
+  <!-- Muestra el contenido principal de la aplicación cuando showSplash es false -->
+  <div *ngIf="!showSplash">
+    <ion-router-outlet></ion-router-outlet>
+  </div>
 </ion-app>

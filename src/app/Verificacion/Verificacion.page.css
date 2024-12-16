@@ -1,0 +1,25 @@
+.success-message {
+  padding: 20px;
+  background-color: #e1f7e1;
+  color: green;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.success-message ion-icon {
+  margin-right: 10px;
+}
+
+.error-message {
+  padding: 20px;
+  background-color: #f8d7da;
+  color: red;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.error-message ion-icon {
+  margin-right: 10px;
+}
