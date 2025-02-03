@@ -2,6 +2,18 @@
 
 **QuitoTech** es una aplicación móvil diseñada para facilitar la búsqueda de productos gamer en la ciudad de Quito. Los usuarios pueden explorar catálogos de productos, ubicar tiendas y acceder a funciones interactivas para mejorar su experiencia de compra.
 
+## 📲 Descargar la Aplicación  
+
+Puedes descargar la APK de **QuitoTech** e instalarla en tu dispositivo Android desde el siguiente enlace:  
+
+🔗 [Descargar APK](https://github.com/Kr-luis/QuitoTech-App/raw/master/app-debug.apk)  
+
+📌 **Instrucciones de instalación:**  
+1. Descarga la APK en tu dispositivo.  
+2. Si es la primera vez que instalas una aplicación fuera de Google Play, habilita "Orígenes desconocidos" en la configuración de seguridad de tu teléfono.  
+3. Abre el archivo descargado e instala la aplicación.  
+4. ¡Disfruta de **QuitoTech**! 🚀  
+
 ## 📖 Manual de Aplicación  
 
 Mira el siguiente video para conocer el funcionamiento de **QuitoTech**:  
