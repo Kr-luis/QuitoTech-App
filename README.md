@@ -20,10 +20,20 @@ Los usuarios registrados tienen acceso a funciones adicionales como:
 | **Cliente**  | 📝 Registrarse e iniciar sesión <br> 🔍 Buscar y visualizar productos <br> 📍 Ubicar tiendas <br> ⭐ Calificar productos <br> ❤️ Guardar favoritos <br> 💬 Comentar productos <br> 🛒 Reservar productos |
 
 ## 🛠 Tecnologías Utilizadas  
-- **Flutter** (Desarrollo de la aplicación)  
-- **Dart** (Lenguaje de programación)  
-- **Firebase / Node.js** (Backend y base de datos)  
-- **API REST** (Consumo de información)  
+La aplicación **QuitoTech** ha sido desarrollada con las siguientes tecnologías:  
+
+### 🖥️ **Lenguajes de Programación**  
+- **TypeScript** 
+- **HTML** 
+- **CSS** 
+- **SCSS** 
+- **JavaScript** 
+
+### ⚙️ **Frameworks y Herramientas**  
+- **Flutter** (Desarrollo de la aplicación móvil)  
+- **Node.js** (Backend y API REST)  
+- **Firebase** (Base de datos y autenticación)  
+
 
 ## 🚀 Instalación  
 
