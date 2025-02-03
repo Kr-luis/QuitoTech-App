@@ -2,6 +2,15 @@
 
 **QuitoTech** es una aplicación móvil diseñada para facilitar la búsqueda de productos gamer en la ciudad de Quito. Los usuarios pueden explorar catálogos de productos, ubicar tiendas y acceder a funciones interactivas para mejorar su experiencia de compra.
 
+## 📖 Manual de Aplicación  
+
+Mira el siguiente video para conocer el funcionamiento de **QuitoTech**:  
+
+[![Manual de Aplicación](https://github.com/user-attachments/assets/d9aadedf-f75f-4a35-9123-3b98b34a0c17)](https://youtu.be/7qZay6YPpjk)  
+
+Haz clic en la imagen o en el siguiente enlace para verlo:  
+🔗 [Ver video en YouTube](https://youtu.be/7qZay6YPpjk)  
+
 ## 📌 Alcance  
 
 La aplicación **QuitoTech** permite a los usuarios buscar productos gamer en Quito sin necesidad de registrarse. Se pueden realizar búsquedas por nombre o categoría, y visualizar la ubicación de las tiendas que disponen del artículo deseado.  
