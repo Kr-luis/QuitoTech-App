@@ -40,4 +40,4 @@ Los usuarios registrados tienen acceso a funciones adicionales como:
 
 1. Clona este repositorio:  
    ```bash
-   git clone https://github.com/tuusuario/QuitoTech.git
+   git clone https://github.com/Kr-luis/QuitoTech-App.git
